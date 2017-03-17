@@ -42,19 +42,23 @@ public class MainActivity extends AppCompatActivity {
        class demo {
           @JavascriptInterface
            public void back() {
-               mHandler = new Handler();
-               mHandler.post(new Runnable() {
+
+               /*mHandler.post(new Runnable() {
                    @Override
                    public void run() {
 
-                       /*Toast.makeText(MainActivity.this,"点击按钮",Toast.LENGTH_SHORT).show();
+                       *//*Toast.makeText(MainActivity.this,"点击按钮",Toast.LENGTH_SHORT).show();
                        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                       startActivityForResult(intent, 1);*/
+                       startActivityForResult(intent, 1);*//*
 
 
 
                    }
-               });
+               });*/
+              Intent intent = new Intent(Intent.ACTION_DIAL);
+              Uri data = Uri.parse("tel:" + "10086");
+              intent.setData(data);
+              startActivity(intent);
 
        }
 
